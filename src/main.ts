@@ -10,7 +10,7 @@ async function bootstrap() {
   const swaggerConfig = new DocumentBuilder()
     .setTitle("PI BACKEND")
     .setDescription(
-      "This is an API for an educational for uncle Henry"
+      "This is an API built in the educational process during my studies as a full stack developer"
     )
     .setVersion('1.0')
     .addBearerAuth()
