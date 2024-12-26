@@ -5,7 +5,7 @@ import { Roles } from "src/decorators/roles.decorator";
 import { Role } from "src/role.enum";
 import { RolesGuard } from "src/Auth/guards/roles.guard";
 import { ApiBadRequestResponse, ApiBearerAuth, ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiTags, ApiUnauthorizedResponse } from "@nestjs/swagger";
-import { updateProductsDTO } from "../Products/DTO/productsDTO";
+import { updateProductsDTO } from "./productsDTO";
 
 
 @ApiTags('Product')

@@ -1,5 +1,5 @@
 import { ProductService } from "./products.service";
-import { updateProductsDTO } from "../Products/DTO/productsDTO";
+import { updateProductsDTO } from "./productsDTO";
 export declare class ProductController {
     private readonly productService;
     constructor(productService: ProductService);
