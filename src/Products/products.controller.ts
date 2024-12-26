@@ -1,11 +1,11 @@
-import { Controller, Get, Param, Post, Body, Put, Delete, UseGuards, UsePipes, ValidationPipe } from "@nestjs/common";
+import { Controller, Get, Param, Body, Put, Delete, UseGuards, UsePipes, ValidationPipe } from "@nestjs/common";
 import { ProductService } from "./products.service";
 import { AuthGuard } from "src/Auth/guards/auth.guard";
 import { Roles } from "src/decorators/roles.decorator";
 import { Role } from "src/role.enum";
 import { RolesGuard } from "src/Auth/guards/roles.guard";
 import { ApiBadRequestResponse, ApiBearerAuth, ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiTags, ApiUnauthorizedResponse } from "@nestjs/swagger";
-import { updateProductsDto } from "./Dto/productsDTO";
+import { updateProductsDto } from "./DTO/productsDTO";
 
 @ApiTags('Product')
 @Controller('products')

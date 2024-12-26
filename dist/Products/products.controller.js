@@ -21,7 +21,7 @@ const roles_decorator_1 = require("../decorators/roles.decorator");
 const role_enum_1 = require("../role.enum");
 const roles_guard_1 = require("../Auth/guards/roles.guard");
 const swagger_1 = require("@nestjs/swagger");
-const productsDTO_1 = require("./Dto/productsDTO");
+const productsDTO_1 = require("./DTO/productsDTO");
 let ProductController = class ProductController {
     constructor(productService) {
         this.productService = productService;
