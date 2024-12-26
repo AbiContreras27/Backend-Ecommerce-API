@@ -21,7 +21,7 @@ const roles_decorator_1 = require("../decorators/roles.decorator");
 const role_enum_1 = require("../role.enum");
 const roles_guard_1 = require("../Auth/guards/roles.guard");
 const swagger_1 = require("@nestjs/swagger");
-const productsDTO_1 = require("./DTO/productsDTO");
+const productsDTO_1 = require("../Products/DTO/productsDTO");
 let ProductController = class ProductController {
     constructor(productService) {
         this.productService = productService;
@@ -146,7 +146,7 @@ __decorate([
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, productsDTO_1.updateProductsDto]),
+    __metadata("design:paramtypes", [String, productsDTO_1.updateProductsDTO]),
     __metadata("design:returntype", void 0)
 ], ProductController.prototype, "updateProducts", null);
 __decorate([

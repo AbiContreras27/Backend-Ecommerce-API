@@ -5,7 +5,8 @@ import { Roles } from "src/decorators/roles.decorator";
 import { Role } from "src/role.enum";
 import { RolesGuard } from "src/Auth/guards/roles.guard";
 import { ApiBadRequestResponse, ApiBearerAuth, ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiTags, ApiUnauthorizedResponse } from "@nestjs/swagger";
-import { updateProductsDto } from "src/Products/DTO/productsDTO"
+import { updateProductsDTO } from "../Products/DTO/productsDTO";
+
 
 @ApiTags('Product')
 @Controller('products')
@@ -103,7 +104,7 @@ export class ProductController {
             },
         },
     })
-    updateProducts(@Param('id') id: string, @Body() updateProductsDto: updateProductsDto) {
+    updateProducts(@Param('id') id: string, @Body() updateProductsDto: updateProductsDTO) {
         return this.productService.updateProducts(id, updateProductsDto)
     }
 

@@ -5,7 +5,7 @@ import { AuthModule } from './Auth/auth.modules';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { CategoriesModule } from './categories/categories.module';
-import { OrdersModule } from 'src/orders/orders.module';
+import { OrdersModule } from '../src/Orders/orders.module';
 import { CloudinaryModule } from './Cloudinary/cloudinary.module';
 import { JwtModule } from '@nestjs/jwt';
 import typeorm from "./config/config"
