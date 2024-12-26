@@ -8,6 +8,9 @@ declare const _default: (() => {
     dropSchema: boolean;
     synchronize: boolean;
     logging: boolean;
+    ssl: {
+        rejectUnauthorized: boolean;
+    };
 }) & import("@nestjs/config").ConfigFactoryKeyHost<{
     type: string;
     url: string;
@@ -17,6 +20,9 @@ declare const _default: (() => {
     dropSchema: boolean;
     synchronize: boolean;
     logging: boolean;
+    ssl: {
+        rejectUnauthorized: boolean;
+    };
 }>;
 export default _default;
 export declare const conectionSource: DataSource;

@@ -13,7 +13,10 @@ const config = {
     autoLoadEntities: true,
     dropSchema: false,
     synchronize: true,
-    logging: true
+    logging: true,
+    ssl: {
+        rejectUnauthorized: false,
+    },
 };
 exports.default = (0, config_1.registerAs)('typeorm', () => config);
 exports.conectionSource = new typeorm_1.DataSource(config);
