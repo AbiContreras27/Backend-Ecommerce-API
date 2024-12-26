@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post, Body, Put, Delete, Query, UseGuards, HttpCode, UsePipes, ValidationPipe } from "@nestjs/common";
+import { Controller, Get, Param, Post, Body, Put, Delete, Query, UseGuards, HttpCode, UsePipes, ValidationPipe, HttpStatus } from "@nestjs/common";
 import { UsersService } from "./users.service";
 import { AuthGuard } from "src/Auth/guards/auth.guard";
 import { ParseUUIDPipe } from "src/pipes/parse-uuidpipe.pipe";
@@ -98,6 +98,12 @@ export class UsersController {
     @UseGuards(AuthGuard)
     getUsersById(@Param('id', ParseUUIDPipe) id: string) {
         return this.usersService.getUsersById(id);
+    }
+
+    @Put(':id/make-admin')
+    @HttpCode(HttpStatus.NO_CONTENT)
+    async makeAdmin(@Param('id') id: string): Promise<void> {
+        await this.usersService.makeAdmin(id);
     }
 
     @ApiBearerAuth()

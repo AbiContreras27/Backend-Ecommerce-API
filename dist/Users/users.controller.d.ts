@@ -25,6 +25,7 @@ export declare class UsersController {
         city?: string;
         orders: import("../Entities/orders.entity").Order[];
     }>;
+    makeAdmin(id: string): Promise<void>;
     updateUser(id: string, updateUserDto: UpdateUserDTO): Promise<{
         message: string;
     }>;

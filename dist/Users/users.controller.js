@@ -36,6 +36,9 @@ let UsersController = class UsersController {
     getUsersById(id) {
         return this.usersService.getUsersById(id);
     }
+    async makeAdmin(id) {
+        await this.usersService.makeAdmin(id);
+    }
     updateUser(id, updateUserDto) {
         return this.usersService.updateUser(id, updateUserDto);
     }
@@ -129,6 +132,15 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], UsersController.prototype, "getUsersById", null);
+__decorate([
+    (0, common_1.Put)(':id/make-admin'),
+    (0, common_1.HttpCode)(common_1.HttpStatus.NO_CONTENT),
+    openapi.ApiResponse({ status: common_1.HttpStatus.NO_CONTENT }),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], UsersController.prototype, "makeAdmin", null);
 __decorate([
     (0, swagger_1.ApiBearerAuth)(),
     (0, common_1.HttpCode)(200),

@@ -27,6 +27,7 @@ export declare class UsersService {
         city?: string;
         orders: import("../Entities/orders.entity").Order[];
     }>;
+    makeAdmin(userId: string): Promise<User>;
     deleteUser(id: string): Promise<{
         message: string;
     }>;

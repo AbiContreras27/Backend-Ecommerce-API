@@ -38,6 +38,14 @@ let UsersService = class UsersService {
         const { isAdmin, password, ...userByIdResul } = userFoundById;
         return userByIdResul;
     }
+    async makeAdmin(userId) {
+        const user = await this.usersRepository.findOne({ where: { id: userId } });
+        if (!user) {
+            throw new common_1.NotFoundException(`User with ID ${userId} not found`);
+        }
+        user.isAdmin = true;
+        return this.usersRepository.save(user);
+    }
     async deleteUser(id) {
         await this.usersRepository.delete(id);
         return { message: 'Usuario Eliminado' };

@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { User } from "src/Entities/users.entity";
 import { Repository } from "typeorm";
@@ -39,6 +39,18 @@ export class UsersService {
         return userByIdResul;
 
     }
+
+    async makeAdmin(userId: string): Promise<User> {
+        const user = await this.usersRepository.findOne({ where: { id: userId } });
+
+        if (!user) {
+            throw new NotFoundException(`User with ID ${userId} not found`);
+        }
+
+        user.isAdmin = true;
+        return this.usersRepository.save(user);
+    }
+
 
     async deleteUser(id: string) {
         await this.usersRepository.delete(id)
